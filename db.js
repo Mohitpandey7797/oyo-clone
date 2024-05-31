@@ -1,10 +1,8 @@
 import mongoose from "mongoose";
 
-const URI = "mongodb+srv://mohitpandey7797:Mohit@#54321@project.wfwm5pb.mongodb.net/Project"
+const URI = "mongodb+srv://mohitpandey7797:Mohit123@cluster0.fic6kb1.mongodb.net/oyo"
 const connectDB = async() =>{
-    await mongoose.connect(URI,{
-       
-    });
+    await mongoose.connect(URI)         
     console.log("DB Connected...");
 }
 export default connectDB;

@@ -4,7 +4,6 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 export default async function handler(req, res) {
-    console.log("Hello");
     if (req.method === "POST") {
         connectDB();
         const { name, email, password } = req.body;
