@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Block from './Block'
+import Link from 'next/link'
 
 
 function Header1() {
@@ -15,7 +16,9 @@ function Header1() {
 
       <div className='flex items-center px-3'>
       <Image src={'https://img.icons8.com/color/48/000000/user-male-circle.png'} alt='demo' width={30} height={30}className=" mr-5" />
-      <h3 className='font-bold' >Login / SignUp</h3>
+      <Link href={'/login'}>
+        <h3 className='font-bold' >Login / SignUp</h3>
+      </Link>
       </div>
       </div>
     </div>
