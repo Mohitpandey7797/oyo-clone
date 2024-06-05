@@ -1,6 +1,10 @@
 'use client'
 import Head from "next/head"
 import { useState } from "react"
+import axios from "axios";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
+
 
 function Login() {
     const [name, setName] = useState("");
@@ -8,8 +12,18 @@ function Login() {
     const [password, setPassword] = useState("");
     const [login, setLogin] = useState(false);
 
-    const handleSignUp = () => {
-        console.log(name, email, password);
+    const router = useRouter();
+    const handleSignUp = async() => {
+        const res = await axios.post(`/api/user/register`,{
+            name,
+            email,
+            password,
+        });
+        if(res?.data){
+            Cookies.set('user', res.data.token);
+            alert(res.data.msg);
+            router.push('/');
+        }
     }
 
 
@@ -18,9 +32,17 @@ function Login() {
     }
 
 
-    const handleLogin = () => {
-        
-    }
+    const handleLogin = async() => {
+        const res = await axios.post(`/api/user/login`,{
+            email,
+            password,
+        });
+        if(res?.data){
+            Cookies.set('user', res.data.token);
+            alert(res.data.msg);
+            router.push('/');
+        }
+    };
 
     return (
         <div>
