@@ -23,7 +23,9 @@ function Header1() {
 
   return (
     <div className='flex justify-between border-b-2 border-gray-300 items-center h-20 px-10'>
-      <Image src={'/logo.png'} alt='logo' width={150} height={150} />
+      <Link href="/">
+        <Image src={'/logo.png'} alt='logo' width={150} height={150} className="cursor-pointer" />
+      </Link>
 
       <div className='h-full flex'>
         <Block title={'Become a member'} para={'Additional 0% off on stays.'} imageSrc={'https://img.icons8.com/color/48/000000/discount.png'} />
