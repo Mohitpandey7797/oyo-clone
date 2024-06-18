@@ -4,11 +4,11 @@ import Link from "next/link"
 
 function Hotel({ hotel }) {
   return (
-    <div className="border-2 border-red-500 rounded-lg h-80 w-full mb-5 p-5 ">
+    <div className="border-2 border-red-500 rounded-lg h-auto w-full mb-5 p-5 ">
       <div className="flex">
         <Image src={hotel?.banner} alt="hotel" width={500} height={500} className="w-96 h-60 mr-3" />
 
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between"> 
 
           {
             hotel ? hotel.gallery?.map((ele) => {
@@ -17,8 +17,6 @@ function Hotel({ hotel }) {
               )
             }) : ""
           }
-
-
 
         </div>
 
@@ -34,7 +32,7 @@ function Hotel({ hotel }) {
 
                     <li key={ele.name} className="mr-10 mb-3 flex items-center">
                       <span>
-                        <Image src={ele.img} width={200} height={200} className="w-10 h-10 rounded-full" />
+                        <Image src={ele.img} width={200} height={200} className="w-15 h-15 rounded-full" />
                       </span>
                       <span className="ml-5">{ele.name}</span>
                     </li>

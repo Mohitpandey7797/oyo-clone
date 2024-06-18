@@ -21,7 +21,7 @@ export default async function handler(req, res) {
             password: hashedPassword,
         });
         const result = await newUser.save();
-        const token = jwt.sign({ token: result._id }, 'Code_AJ', { expiresIn: "30d", })
+        const token = jwt.sign({ token: result._id }, process.env.JWT_SECRET, { expiresIn: "30d", })
         return res.status(201).json({ msg: "Registered Succesfully!", token, user:result});
     }
 }

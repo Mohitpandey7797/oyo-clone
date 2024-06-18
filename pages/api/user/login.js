@@ -19,7 +19,7 @@ export default async function handler(req,res){
             return res.status(400).json({msg:"Invalid Credentitials!"});
 
         }
-        const token = jwt.sign({token: emailExists._id},"Code_AJ",{expiresIn:"30d",});
+        const token = jwt.sign({token: emailExists._id},process.env.JWT_SECRET,{expiresIn:"30d",});
         res.status(200).json({msg:"Logged in Succesfully!", token})
     
     }
