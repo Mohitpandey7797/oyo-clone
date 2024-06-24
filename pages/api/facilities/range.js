@@ -7,7 +7,7 @@ export default async function handler(req, res) {
             await connectDB();  // Ensure the database connection is awaited
 
             // Fetch hotels with price less than or equal to the query price
-            const hotels = await(await hotelModel.find({ price: { $lte: req.query.price } })).length;
+            const hotels = (await hotelModel.find({ price: { $lte: req.query.price } })).length;
 
             // Respond with the list of hotels
             res.status(200).json({ msg: "Range Filter.", hotels });

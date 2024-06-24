@@ -22,7 +22,7 @@ function Header2() {
     ]
   return (
     <div>
-      <div className="flex px-10 py-3 bg-gray-200 justify-between px-10">
+      <div className="flex py-3 bg-gray-200 justify-between px-10">
         {
             List.map((e)=>{
                 return(
